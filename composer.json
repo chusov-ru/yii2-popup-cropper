@@ -1,12 +1,32 @@
 {
     "name": "chusov-ru/yii2-popup-cropper",
     "description": "Extension for upload and crop image",
-    "type": "library",
+    "keywords": ["yii2", "crop", "upload", "popup", "jquery"],
+    "homepage": "https://chusov.ru/yii2-popup-cropper",
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
     "authors": [
         {
             "name": "Eugene Chusov",
             "email": "eugene@chusov.ru"
+            "homepage": "http://chusov.ru/"
         }
     ],
-    "require": {}
+    "support": {
+        "issues": "https://github.com/chusov-ru/yii2-popup-cropper/issues",
+        "source": "https://github.com/chusov-ru/yii2-popup-cropper"
+    },
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "chusov-ru\\yii2-popup-cropper\\": "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
 }
