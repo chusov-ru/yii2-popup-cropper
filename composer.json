@@ -8,8 +8,8 @@
     "authors": [
         {
             "name": "Eugene Chusov",
-            "email": "eugene@chusov.ru"
-            "homepage": "http://chusov.ru/"
+            "email": "eugene@chusov.ru",
+            "homepage": "http://chusov.ru"
         }
     ],
     "support": {
@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "chusov-ru\\yii2-popup-cropper\\": "src"
+            "Chusov\\PopupCropper\\": "src"
         }
     },
     "extra": {
