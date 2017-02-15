@@ -1,0 +1,12 @@
+{
+    "name": "chusov-ru/yii2-popup-cropper",
+    "description": "Extension for upload and crop image",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Eugene Chusov",
+            "email": "eugene@chusov.ru"
+        }
+    ],
+    "require": {}
+}
