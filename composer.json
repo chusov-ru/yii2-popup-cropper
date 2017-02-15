@@ -4,7 +4,7 @@
     "keywords": ["yii2", "crop", "upload", "popup", "jquery"],
     "homepage": "https://chusov.ru/yii2-popup-cropper",
     "type": "yii2-extension",
-    "license": "BSD-3-Clause",
+    "license": "MIT",
     "authors": [
         {
             "name": "Eugene Chusov",
@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Chusovru\\PopupCropper\\": "src"
+            "chusovru\\cropper\\": "src"
         }
     },
     "extra": {
