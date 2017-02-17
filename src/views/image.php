@@ -4,4 +4,6 @@
 <input type="file" class="ch-cropper-file" data-id="<?= $id ?>" name="ch-cropper-file"/>
 </div>
 
-<?= $this->render('popup', ['id' => $id]); ?>
+<div class="ch-cropper-popup modal fade cropper" data-id="<?= $id ?>" role="dialog">
+<?= $this->render('popup'); ?>
+</div>

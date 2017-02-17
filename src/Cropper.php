@@ -89,6 +89,7 @@ class Cropper extends Widget {
      */
     public function init() {
 
+        CropperlibAsset::register($this->view);
         CropperAsset::register($this->view);
         parent::init();
 

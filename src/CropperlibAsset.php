@@ -10,23 +10,23 @@
 namespace chusov\cropper;
 
 /**
- * Asset bundle for Cropper Widget
+ * Asset bundle for Cropper bower lib Widget
  *
  * @author Eugene Chusov <eugene@chusov.ru>
  * @since 1.0
  */
-class CropperAsset extends \yii\web\AssetBundle
+class CropperlibAsset extends \yii\web\AssetBundle
 {
 
-    public $sourcePath = '@chusov/cropper/assets';
+    public $sourcePath = '@bower/cropper';
+
+    public $css = [
+        ['dist/cropper.min.css'],
+    ];
 
     public $js = [
-        ['js/widget.js'],
-        ['js/cropper.js'],
+        ['dist/cropper.min.js'],
     ];
 
-    public $depends = [
-        'yii\web\JqueryAsset',
-    ];
-
+    public $depends = [];
 }

@@ -14,6 +14,7 @@ $( function(){
 
         var $input = $(this);
         var id = $input.data('id');
+        var $popup = $('.ch-cropper-popup[data-id="'+id+'"]');
 
         var formData = new FormData();
 
@@ -30,7 +31,23 @@ $( function(){
 
                   // путь до файла
                   // открываем кроппер
-                  alert(data.path)
+                  //alert(data.path)
+                  //var key = imageKey.split('-')[0];
+                  //var $window = $('#cropper_'  + key);
+                  //var $visualBox = $window.find('.img-container');
+
+                  //$visualBox.css('visibility', 'hidden');
+                  $popup.modal();
+
+                  var cropUrl = '';
+
+                  var callback = function(src){
+                      alert(src);
+                  }
+
+                  setTimeout( function(){
+                      initCropper($popup, cropUrl, data.path, callback, true);
+                  }, 400);
                }
         });
 
