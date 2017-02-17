@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "chusovru\\cropper\\": "src"
+            "chusov\\cropper\\": "src"
         }
     },
     "extra": {
