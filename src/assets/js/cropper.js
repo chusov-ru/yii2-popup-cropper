@@ -2,17 +2,12 @@
 /**
  * Cropper initialization
  */
-var initCropper = (function($popup, cropUrl, src, callback, fixedCrop) {
+var initCropper = (function($popup, cropUrl, imageSrc, callback, fixedCrop) {
 
     'use strict';
 
-    //var key = imageKey.split('-')[0];
-    //var $popup = $('#cropper_' + key);
-
     var $visualBox = $popup.find('.img-container');
     var console = window.console || { log: function () {} };
-
-    //var $object = $('[data-key="' + imageKey + '"]');
 
     var $image = $popup.find('#image');
     var $download = $popup.find('#download');
@@ -31,7 +26,7 @@ var initCropper = (function($popup, cropUrl, src, callback, fixedCrop) {
     $popup.find('[data-toggle="tooltip"]').tooltip();
 
     // Устанавливаем картинку
-    $image.attr('src', src);
+    $image.attr('src', imageSrc  + '?' + (new Date()).getTime() );
 
     /**
      * Options
@@ -84,14 +79,17 @@ var initCropper = (function($popup, cropUrl, src, callback, fixedCrop) {
 
         var data = $image.cropper('getData', true);
 
-        data.src = $image.attr('src');
+        data.src = imageSrc;
         data['ch-cropper-crop-ajax'] = 1;
+
+        $popup.modal('hide');
 
         $.ajax( cropUrl, {
             type: 'post',
             data: data,
             dataType: 'json',
             success: function (data) {
+
                 callback( data.path + '?' + (new Date()).getTime() );
             },
         });

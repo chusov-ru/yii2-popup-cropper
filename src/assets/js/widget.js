@@ -10,16 +10,21 @@ $( function(){
     });
 
     // File upload process
-    $(document).on('change', 'input.ch-cropper-file', function(){
+    $(document).on('change', 'input.ch-cropper-file', function(e){
 
         var $input = $(this);
         var id = $input.data('id');
+        var $block = $('.ch-cropper-block[data-id="'+id+'"]');
         var $popup = $('.ch-cropper-popup[data-id="'+id+'"]');
 
         var formData = new FormData();
 
         formData.append('ch-cropper-tmp-ajax', 1);
         formData.append('ch-cropper-file', $input[0].files[0]);
+
+        // clean file input to trigger change where select
+        // same file again
+        $input.val('');
 
         $.ajax({
                url : '',
@@ -29,20 +34,15 @@ $( function(){
                contentType: false,  // tell jQuery not to set contentType
                success : function(data) {
 
-                  // путь до файла
-                  // открываем кроппер
-                  //alert(data.path)
-                  //var key = imageKey.split('-')[0];
-                  //var $window = $('#cropper_'  + key);
-                  //var $visualBox = $window.find('.img-container');
-
-                  //$visualBox.css('visibility', 'hidden');
-                  $popup.modal();
+                  $popup.find('.img-container').css('visibility', 'hidden');
+                  $popup.modal('show');
 
                   var cropUrl = '';
 
                   var callback = function(src){
-                      alert(src);
+                      $block.find('img').attr('src', src);
+                      $('img.user_avatar').attr('src', src);
+                      return;
                   }
 
                   setTimeout( function(){
