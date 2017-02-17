@@ -17,7 +17,8 @@
         "source": "https://github.com/chusov-ru/yii2-popup-cropper"
     },
     "require": {
-        "yiisoft/yii2": "~2.0.0"
+        "yiisoft/yii2": "~2.0.0",
+        "avalanche123/Imagine": "~0.6.x"
     },
     "autoload": {
         "psr-4": {
