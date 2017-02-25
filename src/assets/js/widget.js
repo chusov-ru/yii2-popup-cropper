@@ -9,6 +9,11 @@ $( function(){
         $file.click();
     });
 
+});
+
+
+$( function(){
+
     // File upload process
     $(document).on('change', 'input.ch-cropper-file', function(e){
 
@@ -40,8 +45,12 @@ $( function(){
                   var cropUrl = '';
 
                   var callback = function(src){
+
                       $block.find('img').attr('src', src);
+                      $block.addClass('profile-avatar-active');
+
                       $('img.user_avatar').attr('src', src);
+
                       return;
                   }
 
@@ -54,6 +63,25 @@ $( function(){
        // alert($input.val());
     });
 
+});
 
+// remove avatar
+$(function(){
 
+    $(document).on('click', '.img_delete', function(e){
+
+        var $block = $(this).parents('.ch-cropper-block');
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        $block.removeClass('profile-avatar-active');
+
+        $.post( '', { 'ch-cropper-delete-ajax': 1 }, function (data) {
+                $block.find('img').attr('src', data.output);
+                $('img.user_avatar').attr('src', data.output);
+            }
+        );
+
+    });
 });

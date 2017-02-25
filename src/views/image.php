@@ -1,4 +1,6 @@
-<div class="ch-cropper-block" data-id="<?= $id ?>"><?= $content ?></div>
+<div class="ch-cropper-block <?= $exists ? 'profile-avatar-active' : '' ?>" data-id="<?= $id ?>">
+<?= $content ?>
+</div>
 
 <div class="ch-cropper-fileuploader" data-id="<?= $id ?>" style="display:none">
 <input type="file" class="ch-cropper-file" data-id="<?= $id ?>" name="ch-cropper-file"/>

@@ -16,6 +16,12 @@ class Cropper extends Widget {
     public $popupTitle = 'Crop image';
 
     /**
+     * If user has active avatar file
+     * exits=true (use for show remove avatar button)
+     */
+    public $exists = false;
+
+    /**
      * Widget init
      */
     public function init() {
@@ -34,6 +40,7 @@ class Cropper extends Widget {
             'id' => $this->id,
             'content' => $this->content,
             'popupTitle' => $this->popupTitle,
+            'exists' => $this->exists,
         ]);
 
     }
