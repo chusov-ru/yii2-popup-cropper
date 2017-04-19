@@ -49,7 +49,7 @@ $( function(){
                       $block.find('img').attr('src', src);
                       $block.addClass('profile-avatar-active');
 
-                      $('img.user_avatar').attr('src', src);
+                      //$('img.user_avatar').attr('src', src);
 
                       return;
                   }
@@ -79,7 +79,7 @@ $(function(){
 
         $.post( '', { 'ch-cropper-delete-ajax': 1 }, function (data) {
                 $block.find('img').attr('src', data.output);
-                $('img.user_avatar').attr('src', data.output);
+                //$('img.user_avatar').attr('src', data.output);
             }
         );
 
